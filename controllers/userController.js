@@ -46,37 +46,4 @@ module.exports = {
             )
             .catch((err) => res.status(500).json(err))
     },
-
-    addReaction(req, res) {
-        console.log('You are adding a reaction')
-        User.findOneAndUpdate(
-            { _id: req.params.userId },
-            { $addToSet: { reactions: req, body } },
-            { runValidators: true, new: true }
-        )
-            .then((user) =>
-                !user
-                    ? res
-                        .status(404)
-                        .json({ message: 'No user with that ID' })
-                    : res.json(user)
-            )
-            .catch((err) => res.status(500).json(err))
-    },
-
-    removeReaction(req, res) {
-        User.findOneAndUpdate(
-            { _id: req.params.userId },
-            { $pull: { thoughts: { reactionId: req.params.reactionId } } },
-            { runValidators: true, new: true }
-        )
-            .then((user) =>
-                !user
-                    ? res
-                        .status(404)
-                        .json({ message: 'No user found with that ID' })
-                    : res.json(user)
-            )
-            .catch((err) => res.status(500).json(err))
-    }
 }
