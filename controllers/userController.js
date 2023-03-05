@@ -1,4 +1,4 @@
-//const { ObjectId } = require('moongoose').Types
+const { ObjectId } = require('moongoose').Types
 const { User, Thought } = require('../models')
 
 module.exports = {
