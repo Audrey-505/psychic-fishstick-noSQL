@@ -38,3 +38,5 @@ await Thought.collection.insertOne({
   process.exit(0)
 
 })
+
+//testing seeds
