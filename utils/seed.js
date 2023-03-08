@@ -27,7 +27,7 @@ connection.once('open', async () => {
 await User.collection.insertMany(user)
 
 await Thought.collection.insertOne({
-    thoughtText: 'I like pizza',
+    thoughtText: getRandomThought(),
     username: getRandomUser(),
     reactions: getRandomReaction(),
 })

@@ -38,5 +38,7 @@ const getRandomThought = () => `${getRan(posts)}`
 
 const getRandomReaction = () => `${getRan(reactions)}`
 
+console.log(getRan(reactions));
+
 module.exports = { makeEmail, getRandomUser, getRandomThought, getRandomReaction }
 
