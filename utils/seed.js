@@ -12,7 +12,7 @@ connection.once('open', async () => {
     await User.deleteMany({})
 
     const user = []
-
+const thought = []
     for(let i = 0; i < 7; i++){
         const username = getRandomUser()
 
@@ -21,6 +21,10 @@ connection.once('open', async () => {
         user.push({
             username,
             email
+        })
+        thought.push({
+        thoughtText: getRandomThought(),
+        username: getRandomUser()
         })
     }
 

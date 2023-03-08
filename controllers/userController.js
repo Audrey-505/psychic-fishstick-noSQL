@@ -10,6 +10,7 @@ module.exports = {
     getUser(req, res) {
         User.findOne({ _id: req.params.userId })
             .select('-__v')
+            //.populate('thoughts')
             .lean()
             .then(async (user) =>
                 !user
@@ -46,4 +47,34 @@ module.exports = {
             )
             .catch((err) => res.status(500).json(err))
     },
+    addFriend(req,res){
+        User.findOneAndUpdate(
+            {_id: req.params.userId},
+            {$push: {friends: req.params.friendId}}
+        )
+        .then((friendData) => {
+            if(!friendData){
+                return res.status(404).json({message: 'no friend with that ID found'})
+            }
+            res.json({message: 'thought created successfully!'})
+        })
+        .catch((err) => {
+            console.log(err)
+            return res.status(500).json(err)
+        })
+    },
+
+    delFriend(req,res){
+        User.findOneAndUpdate(
+            {_id: req.params.userId},
+            {$pull: {friends: req.params.friendId }}
+        )
+        .then((friendData) => {
+            if(!friendData){
+                return res.status(404).json({message: 'no friend with that ID found'})
+            }
+            res.json({message: 'friend removed!'})
+        })
+        .catch((err) => res.json(err))
+    }
 }
