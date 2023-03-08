@@ -30,11 +30,13 @@ const thought = []
 
 await User.collection.insertMany(user)
 
-await Thought.collection.insertOne({
-    thoughtText: getRandomThought(),
-    username: getRandomUser(),
-    //reactions: getRandomReaction(),
-})
+await Thought.collection.insertMany(thought)
+
+// await Thought.collection.insertOne({
+//     thoughtText: getRandomThought(),
+//     username: getRandomUser(),
+//     //reactions: getRandomReaction(),
+// })
 
 // console.log('TESTING')
 // await Thought.find().then((thoughts) => {
