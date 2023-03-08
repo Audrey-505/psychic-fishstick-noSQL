@@ -29,8 +29,22 @@ await User.collection.insertMany(user)
 await Thought.collection.insertOne({
     thoughtText: getRandomThought(),
     username: getRandomUser(),
-    reactions: getRandomReaction(),
+    //reactions: getRandomReaction(),
 })
+
+// console.log('TESTING')
+// await Thought.find().then((thoughts) => {
+//     console.log(thoughts)
+//     Thought.collection.findOne(
+//         { _id: thoughts[0]._id},
+//         { $addToSet: { reactions: getRandomReaction() } },
+//         { runValidators: true, new: true }
+//     )
+//     .then((thought) => {
+//         console.log(thought)
+//     })
+// }
+// )
 
 
   console.table(user);

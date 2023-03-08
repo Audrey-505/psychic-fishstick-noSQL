@@ -69,6 +69,7 @@ module.exports = {
                     : res.json(thought)
             )
             .catch((err) => res.status(500).json(err))
+            //.catch((err) => console.log(err))
     },
 
     removeReaction(req, res) {
