@@ -58,15 +58,15 @@ module.exports = {
         console.log('You are adding a reaction')
         Thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
-            { $addToSet: { reactions: req, body } },
+            { $addToSet: { reactions: req.body } },
             { runValidators: true, new: true }
         )
-            .then((user) =>
-                !user
+            .then((thought) =>
+                !thought
                     ? res
                         .status(404)
                         .json({ message: 'No user with that ID' })
-                    : res.json(user)
+                    : res.json(thought)
             )
             .catch((err) => res.status(500).json(err))
     },
