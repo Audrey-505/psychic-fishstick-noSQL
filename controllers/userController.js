@@ -56,7 +56,7 @@ module.exports = {
             if(!friendData){
                 return res.status(404).json({message: 'no friend with that ID found'})
             }
-            res.json({message: 'thought created successfully!'})
+            res.json({message: 'friend added successfully!'})
         })
         .catch((err) => {
             console.log(err)
