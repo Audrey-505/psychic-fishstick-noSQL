@@ -6,6 +6,9 @@ const handles = [
     'neville5',
     'luna6',
     'draco7',
+    'fred8',
+    'george9',
+    'cerdric0'
 ]
 
 const posts = [
@@ -15,7 +18,10 @@ const posts = [
     'I love Taylors new album',
     'that season of Stranger Things comes out tonight!',
     'Who knows the best place to get an oil change in town?',
-    'Coffee is the best way to start my morning'
+    'Coffee is the best way to start my morning',
+    'I love watch reality Tv',
+    'Halloween is the best holiday',
+    'Pepsi is better than Coke',
 ]
 
 const reactions = [
@@ -26,6 +32,9 @@ const reactions = [
     'best show ever',
     'go to Marvins Tire in the square, they are the best',
     'the best part of waking up is foldgers in your cup',
+    'Parties here',
+    'that was one shot kid',
+    'Moria Rose has the best wigs'
 ]
 
 const getRan = (arr) => arr[Math.floor(Math.random() * arr.length)]

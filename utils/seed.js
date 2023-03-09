@@ -13,7 +13,7 @@ connection.once('open', async () => {
 
     const user = []
 const thought = []
-    for(let i = 0; i < 7; i++){
+    for(let i = 0; i < 2; i++){
         const username = getRandomUser()
 
         const email = makeEmail()
@@ -58,5 +58,3 @@ await Thought.collection.insertMany(thought)
   process.exit(0)
 
 })
-
-//testing seeds
