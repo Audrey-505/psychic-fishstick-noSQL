@@ -1,6 +1,6 @@
 const { Schema, Types } = require('mongoose')
 
-
+const moment = require('moment');
 
 let length = function (text) {
     return text.length <= 280 
@@ -24,6 +24,7 @@ const reactionSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now(),
+            get: (createdAtVal) => moment(createdAtVal).format('MMM DD, YYYY [at] hh:mm a')
         },
     },
     {
